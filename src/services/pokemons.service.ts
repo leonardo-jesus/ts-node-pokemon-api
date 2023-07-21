@@ -2,19 +2,23 @@ import axios from 'axios';
 import { IAbility, IPokemon } from '../types/Pokemon';
 
 class PokemonsService {
-    public async getPokemonAbilitiesAlphabetically(pokemonName: string): Promise<IAbility[]> {
-        const { abilities } = await this.getPokemonFromApi(pokemonName);
+    public async getPokemonAbilitiesAlphabetically(pokemonName: string): Promise<IAbility[] | null> {
+        const data = await this.getPokemonFromApi(pokemonName);
 
-        return this.sortPokemonAbilitiesAlphabetically(abilities);
+        if (!data || !data.abilities || data.abilities.length === 0) {
+            return null;
+        }
+
+        return this.sortPokemonAbilitiesAlphabetically(data.abilities);
     }
 
-    private async getPokemonFromApi(pokemonName: string): Promise<IPokemon> {
+    private async getPokemonFromApi(pokemonName: string): Promise<IPokemon | null> {
         try {
             const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
             return data;
         } catch (error) {
-            throw error;
+            return null;
         }
     }
 
