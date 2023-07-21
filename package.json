@@ -1,0 +1,35 @@
+{
+  "name": "zrp-pokemon-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Leonardo Jesus <leonardojesus02@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn nodemon",
+    "lint": "eslint . --ext .ts",
+    "start": "yarn build && node dist/index.js",
+    "build": "rimraf ./build && tsc"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "rimraf": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
