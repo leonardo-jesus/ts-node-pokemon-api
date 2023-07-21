@@ -48,6 +48,7 @@ The ***Pokemon API*** is an application that uses **Node** and **Typescript**, *
 - Implement AWS architecture with Terraform
 - Improve test coverage
 - Implement logging
+- Add rate limiting
 
 ## 📐 AWS Architecture
 <h1 align="center">
