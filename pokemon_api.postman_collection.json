@@ -1,0 +1,176 @@
+{
+    "info": {
+        "_postman_id": "42101c47-0cea-4af5-b810-3d64b1f6397c",
+        "name": "Pokemon API",
+        "description": "## **Introduction**\n\n#### Pokemon API\n\n---\n\n## **Overview**\n\n###### Documentation for Pokemon API. This API is a challenge to ZRP. The Pokemon API is an application that uses Node, with the purpose to achieve my goal which is to become a ZRPenha💙. The API retrieves Pokemon's info from PokeAPI and returns the abilities in alphabetical order. Made with Node, Typescript, Docker and Express.\n\n---\n\n## **Error Codes**\n\n###### 400 - Bad request\n\n###### 404 - Not found\n\n###### 500 - Internal server error",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "11958037",
+        "_collection_link": "https://www.postman.com/leonardo-jesus/workspace/pokemon-api/collection/11958037-42101c47-0cea-4af5-b810-3d64b1f6397c?action=share&creator=11958037&source=collection_link"
+    },
+    "item": [
+        {
+            "name": "routes",
+            "item": [
+                {
+                    "name": "api",
+                    "item": [
+                        {
+                            "name": "pokemons",
+                            "item": [
+                                {
+                                    "name": "/pokemons/:pokemon",
+                                    "request": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseURL}}/api/pokemons/ekans",
+                                            "host": [
+                                                "{{baseURL}}"
+                                            ],
+                                            "path": [
+                                                "api",
+                                                "pokemons",
+                                                "ekans"
+                                            ]
+                                        },
+                                        "description": "#### List pokemon's abilities in alphabetical order\n\n#### Response Schema\n\n| Key | Description | Example | Type |\n| --- | --- | --- | --- |\n| abilities | Pokemon's abilities array | [Ability Schema]() | Array |\n\n#### Ability Schema\n\n| Key | Description | Example | Type |\n| --- | --- | --- | --- |\n| ability | Pokemon's ability | [Ability Object Schema]() | Object |\n| is_hidden | Pokemon's ability visibility | true | Boolean |\n| slot | Pokemon's ability slot | 2 | Number |\n\n#### Ability Object Schema\n\n| Key | Description | Example | Type |\n| --- | --- | --- | --- |\n| name | Pokemon's ability name | intimidate | String |\n| url | Pokemon's ability url | [https://pokeapi.co/api/v2/ability/22/]() | String |"
+                                    },
+                                    "response": [
+                                        {
+                                            "name": "/pokemons/:pokemon",
+                                            "originalRequest": {
+                                                "method": "GET",
+                                                "header": [],
+                                                "url": {
+                                                    "raw": "localhost:3333/api/pokemons/ekans",
+                                                    "host": [
+                                                        "localhost"
+                                                    ],
+                                                    "port": "3333",
+                                                    "path": [
+                                                        "api",
+                                                        "pokemons",
+                                                        "ekans"
+                                                    ]
+                                                }
+                                            },
+                                            "status": "OK",
+                                            "code": 200,
+                                            "_postman_previewlanguage": "json",
+                                            "header": [
+                                                {
+                                                    "key": "X-Powered-By",
+                                                    "value": "Express"
+                                                },
+                                                {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json; charset=utf-8"
+                                                },
+                                                {
+                                                    "key": "Content-Length",
+                                                    "value": "332"
+                                                },
+                                                {
+                                                    "key": "ETag",
+                                                    "value": "W/\"14c-bvgN2ukch4AFAi7k+4lWI6YSaQU\""
+                                                },
+                                                {
+                                                    "key": "Date",
+                                                    "value": "Fri, 21 Jul 2023 14:50:02 GMT"
+                                                },
+                                                {
+                                                    "key": "Connection",
+                                                    "value": "keep-alive"
+                                                },
+                                                {
+                                                    "key": "Keep-Alive",
+                                                    "value": "timeout=5"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "body": "{\n    \"abilities\": [\n        {\n            \"ability\": {\n                \"name\": \"intimidate\",\n                \"url\": \"https://pokeapi.co/api/v2/ability/22/\"\n            },\n            \"is_hidden\": false,\n            \"slot\": 1\n        },\n        {\n            \"ability\": {\n                \"name\": \"shed-skin\",\n                \"url\": \"https://pokeapi.co/api/v2/ability/61/\"\n            },\n            \"is_hidden\": false,\n            \"slot\": 2\n        },\n        {\n            \"ability\": {\n                \"name\": \"unnerve\",\n                \"url\": \"https://pokeapi.co/api/v2/ability/127/\"\n            },\n            \"is_hidden\": true,\n            \"slot\": 3\n        }\n    ]\n}"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "#### Pokemon's endpoint, list pokemon's abilities in alphabetical order"
+                        },
+                        {
+                            "name": "healthcheck",
+                            "item": [
+                                {
+                                    "name": "/healthcheck",
+                                    "request": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseURL}}/api/healthcheck",
+                                            "host": [
+                                                "{{baseURL}}"
+                                            ],
+                                            "path": [
+                                                "api",
+                                                "healthcheck"
+                                            ]
+                                        },
+                                        "description": "#### Returns if api is healthy\n\n---\n\n#### **Response Codes**\n\n###### 204 - Healthy\n\n###### 500 - Unhealthy"
+                                    },
+                                    "response": [
+                                        {
+                                            "name": "/healthcheck",
+                                            "originalRequest": {
+                                                "method": "GET",
+                                                "header": [],
+                                                "url": {
+                                                    "raw": "localhost:3333/api/healthcheck",
+                                                    "host": [
+                                                        "localhost"
+                                                    ],
+                                                    "port": "3333",
+                                                    "path": [
+                                                        "api",
+                                                        "healthcheck"
+                                                    ]
+                                                }
+                                            },
+                                            "status": "No Content",
+                                            "code": 204,
+                                            "_postman_previewlanguage": "plain",
+                                            "header": [
+                                                {
+                                                    "key": "X-Powered-By",
+                                                    "value": "Express"
+                                                },
+                                                {
+                                                    "key": "ETag",
+                                                    "value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
+                                                },
+                                                {
+                                                    "key": "Date",
+                                                    "value": "Fri, 21 Jul 2023 14:37:04 GMT"
+                                                },
+                                                {
+                                                    "key": "Connection",
+                                                    "value": "keep-alive"
+                                                },
+                                                {
+                                                    "key": "Keep-Alive",
+                                                    "value": "timeout=5"
+                                                }
+                                            ],
+                                            "cookie": [],
+                                            "body": null
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "#### Healthcheck endpoint, should be used on Load Balancer to check whether the application is healthy or not"
+                        }
+                    ],
+                    "description": "#### API's endpoint, where its available all endpoints"
+                }
+            ],
+            "description": "#### It contains all routes that API makes available"
+        }
+    ]
+}
