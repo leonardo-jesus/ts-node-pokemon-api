@@ -35,6 +35,7 @@ The ***Pokemon API*** is an application that uses **Node** and **Typescript**, *
 ✔️ You should create the architecture focusing on **lower latency**, **higher avaliability** and **lower cost**.
 
 ## 🎉 Bonus
+- [**API's Deploy on Fly.io**](https://ts-node-pokemon-api.fly.dev/api/pokemons/ekans)
 - [**API's Documentation at Postman**](https://documenter.getpostman.com/view/11958037/2s946k7WjY)
 - Unit tests with [**Jest**](https://jestjs.io/)
 - Integration tests with [**Supertest**](https://www.npmjs.com/package/supertest)
@@ -54,7 +55,7 @@ The ***Pokemon API*** is an application that uses **Node** and **Typescript**, *
 </h1>
 
 ## 📦 Resources
-
+- [**API's Deploy on Fly.io**](https://ts-node-pokemon-api.fly.dev/api/pokemons/ekans)
 - [**API's Documentation at Postman**](https://documenter.getpostman.com/view/11958037/2s946k7WjY)
 
 ## 🚀 Technologies
