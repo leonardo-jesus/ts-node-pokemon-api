@@ -1,18 +1,18 @@
 FROM node:18-alpine as base
 
 WORKDIR /src
-COPY package.json /
-COPY yarn.lock /
-EXPOSE 3333
+COPY package.json .
+COPY yarn.lock .
 
 FROM base as production
-ENV NODE_ENV=production
-RUN yarn install --frozen-lockfile
-COPY . /
-CMD ["node", "index.ts"]
+COPY tsconfig.build.json .
+RUN yarn install
+COPY . .
+RUN yarn run build
+EXPOSE 3333
+CMD ["yarn", "start"]
 
 FROM base as dev
-ENV NODE_ENV=development
 RUN yarn global add nodemon && yarn install
-COPY . /
+COPY . .
 CMD ["nodemon", "index.ts"]
