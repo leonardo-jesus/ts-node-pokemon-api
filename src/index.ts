@@ -1,13 +1,5 @@
 import 'reflect-metadata';
-import express from 'express';
-import routes from './routes/index';
-import { configDotenv } from 'dotenv';
-
-configDotenv();
-
-const app = express();
-app.use(express.json());
-app.use(routes);
+import { app } from './config/app';
 
 app.listen(process.env.PORT, () => {
     // eslint-disable-next-line no-console
